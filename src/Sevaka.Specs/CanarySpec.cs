@@ -1,5 +1,6 @@
 using Machine.Specifications;
 
+#pragma warning disable RCS1213 // Remove unused member declaration.
 #pragma warning disable IDE0052 // Remove unread private members
 
 namespace Sevaka.Specs
@@ -23,4 +24,5 @@ namespace Sevaka.Specs
   }
 }
 
+#pragma warning restore RCS1213 // Remove unused member declaration.
 #pragma warning restore IDE0052 // Remove unread private members
