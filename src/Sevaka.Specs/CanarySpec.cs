@@ -1,22 +1,26 @@
-﻿using Machine.Specifications;
+using Machine.Specifications;
+
+#pragma warning disable IDE0052 // Remove unread private members
 
 namespace Sevaka.Specs
 {
   [Subject("CanarySpec")]
-  internal class When_adding_two_numbers
+  internal class When_two_numbers_are_added
   {
     private static int first, second;
     private static int result;
-    private static int expected = 3;
+    private static readonly int expected = 3;
 
-    private Establish context = () =>
+    private readonly Establish context = () =>
      {
        first = 1;
        second = 2;
      };
 
-    private Because of = () => result = first + second;
+    private readonly Because of = () => result = first + second;
 
-    private It should_have_valid_sum_value = () => result.ShouldEqual(expected);
+    private readonly It it_should_yield_valid_sum = () => result.ShouldEqual(expected);
   }
 }
+
+#pragma warning restore IDE0052 // Remove unread private members
